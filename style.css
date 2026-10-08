@@ -202,3 +202,33 @@ footer{margin-top:90px;padding:30px 16px;text-align:center;border-top:1px solid 
 .card p.big{font-family:'Inter',system-ui,sans-serif;font-weight:600;font-size:3.2rem;line-height:1.1;letter-spacing:-.01em;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1}
 .card p.label{font-size:.75rem}
 .stat b,.year,.eyebrow,.sign{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+
+/* Mobile */
+picture{display:block}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:38px;padding:0;background:none;border:1px solid var(--line-strong);cursor:pointer}
+.nav-toggle span{display:block;width:20px;height:1.5px;background:var(--ice);transition:transform .25s,opacity .25s}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+@media (max-width:820px){
+  .nav-toggle{display:flex}
+  .nav nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:rgba(5,7,13,.97);border-bottom:1px solid var(--line);padding:4px clamp(16px,4vw,48px) 12px}
+  .nav nav.open{display:flex}
+  .nav nav a{padding:14px 0;border-bottom:1px solid var(--line);font-size:.85rem}
+  .nav nav a:last-child{border-bottom:0}
+  .hero{min-height:100svh;padding-top:90px}
+  h1{font-size:clamp(1.7rem,8.2vw,2.6rem);letter-spacing:.12em}
+  .year{font-size:clamp(4.2rem,26vw,7rem)}
+  .sub{font-size:1rem}
+  .card{padding:22px}
+  .org{padding:26px 18px 20px}
+  .timeline{gap:26px}
+  .big{font-size:2.6rem}
+  .card p.big{font-size:2.6rem}
+  .fazit-box>p:first-child{font-size:1.08rem}
+}
+@media (max-width:420px){
+  dl>div{flex-direction:column;gap:2px}
+  dd{text-align:left}
+  .brand span{font-size:.82rem}
+}

@@ -14,3 +14,16 @@
   }, { threshold: 0.12 });
   els.forEach(function (el) { io.observe(el); });
 })();
+
+(function () {
+  var b = document.querySelector('.nav-toggle');
+  var n = document.querySelector('.nav nav');
+  if (!b || !n) return;
+  function close() { n.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  b.addEventListener('click', function () {
+    var o = n.classList.toggle('open');
+    b.setAttribute('aria-expanded', o ? 'true' : 'false');
+  });
+  n.addEventListener('click', function (e) { if (e.target.tagName === 'A') close(); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 820) close(); });
+})();
